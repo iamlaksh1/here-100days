@@ -3,13 +3,14 @@
     <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     <script src="https://js.api.here.com/v3/3.1/mapsjs-core.js" type="text/javascript" charset="utf-8"></script>
     <script src="https://js.api.here.com/v3/3.1/mapsjs-service.js" type="text/javascript" charset="utf-8"></script>
+    <script src="creds.js" type="text/javascript"</script>
   </head>
   <body>
     <div style="width: 100vw; height: 80vh";align-self:center; background-color: aqua; id="mapContainer"></div>
     <script>
       // Initialize the platform object:
       var platform = new H.service.Platform({
-        'apikey': '1B3oKdHUZVTiY0jrFd6tmsB_AkKClvfPzP-OfJ6vbnQ'
+        'apikey': window.hereCreds.JSKEY
       });
 
       // Obtain the default map types from the platform object
