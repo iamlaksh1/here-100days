@@ -2,8 +2,9 @@
   <head>
     <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     <script src="https://js.api.here.com/v3/3.1/mapsjs-core.js" type="text/javascript" charset="utf-8"></script>
-    <script src="https://js.api.here.com/v3/3.1/mapsjs-service.js" type="text/javascript" charset="utf-8"></script>
-    <script src="creds.js" type="text/javascript"</script>
+    <script src="https://js.api.here.com/v3/3.1/mapsjs-service.js" type="text/javascript" charset="utf-8"></script> 
+    <script src="https://js.api.here.com/v3/3.1/mapsjs-mapevents.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-ui.js" charset="utf-8"></script>
   </head>
   <body>
     <div style="width: 100vw; height: 80vh";align-self:center; background-color: aqua; id="mapContainer"></div>
@@ -21,9 +22,19 @@
         document.getElementById('mapContainer'),
         maptypes.vector.normal.map,
         {
-          zoom: 10,
+          zoom: 15,
           center: { lng: -95.72103, lat: 29.65339 }
         });
+      
+      // add a resize listener to make sure that the map occupies the whole container
+    window.addEventListener('resize', () => map.getViewPort().resize());
+
+    //Step 3: make the map interactive
+    // MapEvents enables the event system
+    // Behavior implements default interactions for pan/zoom (also on mobile touch environments)
+    var behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
+    var ui = H.ui.UI.createDefault(map, defaultLayers);
+      
     </script>
   </body>
 </html>
