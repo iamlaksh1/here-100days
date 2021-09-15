@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <meta charset="UTF-8">
+<head>
 <title>HERE Platform API Tutorial </title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<script src="https://js.api.here.com/v3/3.1/mapsjs-core.js" type="text/javascript" charset="utf-8"></script>
+<script src="https://js.api.here.com/v3/3.1/mapsjs-service.js" type="text/javascript" charset="utf-8"></script>
+ </head>
 <link rel="stylesheet" href="">
 <style>
 </style>
 <script src=""></script>
 <body>
-
-<img src="img_la.jpg" alt="LA" style="width:100%">
-
-<div class="">
- <h1>Welcome to HERE Platform</h1>
- <p>How to use JS and REST API</p>
- <p>Hope this helps to understand the platform and API</p>
-</div>
-
+<div style="width: 640px; height: 480px" id="mapContainer"></div>
 </body>
+<script>
+ var platform = new H.service.Platform({
+  'apikey': '{1B3oKdHUZVTiY0jrFd6tmsB_AkKClvfPzP-OfJ6vbnQ}'
+});
+</script>
 </html>
